@@ -33,13 +33,13 @@ Las URI’s están formadas por:
 
 Telegram hace de intermediario entre el usuario y el bot, encriptando la transmisión  con  su  protocolo  MTProto.  Dicho  protocolo  encripta los mensajes simétricamente con *AES-256* y la clave compartida está firmada en *SHA-1*.
 
-## BotFather
+## Bots
+
+### BotFather
 
 @BotFather, es un bot que sirve para crear y administrar bots.Para crear un bot se inicia una conversación con el: https://telegram.me/botfather
 
 ![botFather](https://raw.githubusercontent.com/jmv74211/Telegram_bots/master/images/bot_father.png)
-
-## Bots
 
 ### Creación de un bot
 
@@ -72,6 +72,16 @@ Para utilizar los **bots normales** tenemos que abrir un chat con ellos o inclui
 Por otro lado, los **Inline Bots** están disponible desde principios del año 2016 y la diferencia es en que no necesitamos incluirlos en ninguna grupo para usarlos. Los podemos utilizar en cualquier momento, simplemente tendremos que añadir una arroba con su nombre a la hora de escribir un nuevo mensaje para poder empezar a utilizarlos. Los resultados que nos ofrezcan aparecerán en un menú flotante dentro de la misma conversación y podremos elegir el resultado que más nos guste para mostrar al resto de miembros de dicha conversación.
 
 ## Arquitectura
+
+Los usuarios pueden interactuar con éstos enviándoles mensajes, comandos y solicitudes en línea, se controlan mediante llamadas HTTPS a la API de BOT de Telegram, esto es lo que se conoce como **WebHook**, es decir, callbackHTTPS de usuario.
+
+Para que los servidores de Telegram conozcan la dirección del servidor externo donde  está  alojado el  bot y su  TOKEN  (identificador  utilizado  para  facilitar  el proceso de autenticación),es necesario enviar un WebHook a la API deBOT con la URI (Uniform Resource Identifier) del servidor externo, junto con el  TOKEN del bot.La petición HTTPSquedaría de la siguiente manera:
+
+      https://api.telegram.org/bot[TOKEN]/setWebhook?url=[URL]
+
+Los mensajes,comandos y peticiones enviadas por los usuarios se procesan en el software que se ejecuta en los servidores de Telegram. El intercambio de datos entre los servidores de Telegram y el servidor externo donde está alojado el bot se hace en formato **JSON(JavaScript Object Notation)**, un formato de texto ligero para el intercambio de datos que describe éstos con una sintaxis dedicada que se usa para identificarlos y gestionarlos.
+
+La siguiente figura muestra el flujo de información que se produce en la comunicación:
 
 ![arquitectura](https://raw.githubusercontent.com/jmv74211/Telegram_bots/master/images/arquitectura.png)
 ---
