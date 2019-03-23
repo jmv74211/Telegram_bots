@@ -41,6 +41,7 @@ Telegram hace de intermediario entre el usuario y el bot, encriptando la transmi
 
 ![botFather](https://raw.githubusercontent.com/jmv74211/Telegram_bots/master/images/bot_father.png)
 
+
 ### Creación de un bot
 
 Una vez estemos en la conversación con botFather (ver figura anterior),  se escribe el comando `/newbot` y se asigna el nombre al bot.
@@ -48,6 +49,14 @@ Una vez estemos en la conversación con botFather (ver figura anterior),  se esc
 Seguidamente se introduceel nombrede usuario para el bot, éste tiene que  terminar  obligatoriamente  en  bot,  porejemplo  TetrisBot  o tetris_bot. Este nombre, a diferencia del anterior **no puede ser modificado**.
 
 Una vez asignados estos dos nombres BotFatherproporcionará un **token**, el cual se guardaráporqueservirá para identificar al bot.
+
+**Introducción y ejemplos bots de telegram**
+
+Para ver una pequeña introducción a los bots de telegram y algunos ejemplos de uso más corrientes se puede visitar este **[enlace](https://github.com/jmv74211/Telegram_bots/blob/master/docs/Introducci%C3%B3n.md)**
+
+**Configuración del bot y comunicación con el usuario**
+
+Para ver los posibles comandos de configuración se puede consultar este **[enlace](https://github.com/jmv74211/Telegram_bots/blob/master/docs/Configuraci%C3%B3n_bot.md)**.
 
 ### ¿Cuál es su función real?
 
